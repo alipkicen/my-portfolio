@@ -1,10 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Krishan Arpidani – Portfolio Website
 
-## Getting Started
+This is my personal **portfolio website**, built with [Next.js](https://nextjs.org/).  
+It showcases my work, skills, and experience as a **Software and Artificial Intelligence enthusiast**.
 
-First, run the development server:
+## 🚀 Getting Started
 
-```bash
+Run the development server:
+
 npm run dev
 # or
 yarn dev
@@ -12,25 +14,42 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Then open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ✨ Features
 
-## Learn More
+* Responsive design with **Next.js 14** and **Tailwind CSS**
+* Smooth animations using **Framer Motion**
+* Organized pages: Home, Resume, Services, Work, and Contact
+* Social media and contact integrations
+* Ready for deployment on **Vercel**
 
-To learn more about Next.js, take a look at the following resources:
+## 📂 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* `app/` – Main Next.js app directory
+* `components/` – Reusable UI components
+* `public/assets/` – Images, icons, and static assets
+* `styles/` – Global and utility styles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🧑‍💻 About Me
 
-## Deploy on Vercel
+I’m **Krishan Arpidani**, passionate about building elegant digital experiences and exploring the field of **Artificial Intelligence**.
+This website serves as a showcase of my journey, skills, and projects in **software development and AI**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📖 Learn More
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To dive deeper into the stack used:
+
+* [Next.js Documentation](https://nextjs.org/docs)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Framer Motion](https://www.framer.com/motion/)
+
+## 🌍 Deployment
+
+The site can be deployed easily on [Vercel](https://vercel.com), the platform created by the makers of Next.js.
+
+---
+
+🔗 Feel free to check out my portfolio and get in touch if you’d like to collaborate!
