@@ -1,86 +1,86 @@
 "use client";
 
-import {FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs} from 'react-icons/fa'
-import {SiTailwindcss, SiNextdotjs} from 'react-icons/si'
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
-//about data (udpate here)
+//about data (update here)
 const about = {
-  title: 'About me',
+  title: "About me",
   description: "Nama saya Krishan Arpidani bin Muhammad Danial Philip. Nanti ubah kat sini",
   info: [
     {
       fieldName: "Name",
-      fieldValue: "Krishan Arpidani"
+      fieldValue: "Krishan Arpidani",
     },
     {
       fieldName: "Contact",
-      fieldValue: "(+60)18 313 4090"
+      fieldValue: "(+60)18 313 4090",
     },
     {
       fieldName: "Experience",
-      fieldValue: "Enthusiast - update sini"
+      fieldValue: "Enthusiast - update sini",
     },
     {
       fieldName: "Email",
-      fieldValue: "alip.kicen@gmail.com"
+      fieldValue: "alip.kicen@gmail.com",
     },
     {
       fieldName: "Nationality",
-      fieldValue: "Malaysian"
+      fieldValue: "Malaysian",
     },
     {
       fieldName: "Languages",
-      fieldValue: "English, Bahasa Malaysia"
-    }
-  ]
+      fieldValue: "English, Bahasa Malaysia",
+    },
+  ],
 };
 
-//experience data (udpate here)
+//experience data (update here)
 const experience = {
-  icon: '/assets/resume/badge.svg',
-  title: 'My experience',
+  icon: "/assets/resume/badge.svg",
+  title: "My experience",
   description: "Ini bahagian experience. letak semua experience. Nanti update kat sini pula",
   items: [
     {
       company: "Nama tempat kerja 1",
       position: "Nama position 1",
-      duration: "How long? 1"
+      duration: "How long? 1",
     },
     {
       company: "Nama tempat kerja 2",
       position: "Nama position 2",
-      duration: "How long? 2"
+      duration: "How long? 2",
     },
     {
       company: "Nama tempat kerja 3",
       position: "Nama position 3",
-      duration: "How long? 3"
-    }
-  ]
+      duration: "How long? 3",
+    },
+  ],
 };
 
-//education data (udpate here)
+//education data (update here)
 const education = {
-  icon: '/assets/resume/cap.svg',
-  title: 'My education',
+  icon: "/assets/resume/cap.svg",
+  title: "My education",
   description: "Ini bahagian education pula. Letak degree, diploma, and any course online. Nanti update kat sini",
   items: [
     {
       institute: "Nama tempat belajar 1",
       degree: "Nama course 1",
-      duration: "How long? 1"
+      duration: "How long? 1",
     },
     {
       institute: "Nama tempat belajar 2",
       degree: "Nama course 2",
-      duration: "How long? 2"
-    }
-  ]
+      duration: "How long? 2",
+    },
+  ],
 };
 
-//skills data (udpate here)
+//skills data (update here)
 const skills = {
-  title: 'My skills',
+  title: "My skills",
   description: "Ini bahagian skilss pula. Letak semua skills",
   items: [
     {
@@ -114,33 +114,38 @@ const skills = {
     {
       icon: <FaFigma />,
       name: "figma",
-    }
-  ]
+    },
+  ],
 };
 
-import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip"
-import {ScrollArea} from "@/components/ui/scroll-area"
-import { motion } from 'framer-motion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
 
 const Resume = () => {
+  // pad about section to always have 8 slots
+  const aboutPadded = [
+    ...about.info,
+    ...Array(Math.max(0, 8 - about.info.length)).fill({
+      fieldName: "",
+      fieldValue: "",
+      __placeholder: true,
+    }),
+  ];
+
   return (
-     <motion.div
-      initial={{opacity:0}}
+    <motion.div
+      initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: {delay: 2.4, duration: 0.4, ease: "easeIn"},
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
-     >
+    >
       <div className="container mx-auto">
-        <Tabs
-          defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
-        >
-          <TabsList
-            className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6"
-          >
+        <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px]">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
@@ -152,9 +157,7 @@ const Resume = () => {
             {/*experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">
-                  {experience.title}
-                </h3>
+                <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
@@ -162,19 +165,19 @@ const Resume = () => {
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index) => {
                       return (
-                      <li 
-                        key={index}
-                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                      >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                          {item.position}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.company}</p>
-                        </div>
-                      </li>
+                        <li
+                          key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            {item.position}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60">{item.company}</p>
+                          </div>
+                        </li>
                       );
                     })}
                   </ul>
@@ -185,9 +188,7 @@ const Resume = () => {
             {/*education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">
-                  {education.title}
-                </h3>
+                <h3 className="text-4xl font-bold">{education.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
@@ -195,19 +196,19 @@ const Resume = () => {
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index) => {
                       return (
-                      <li 
-                        key={index}
-                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                      >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                          {item.degree}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.institute}</p>
-                        </div>
-                      </li>
+                        <li
+                          key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        >
+                          <span className="text-accent">{item.duration}</span>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                            {item.degree}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                            <p className="text-white/60">{item.institute}</p>
+                          </div>
+                        </li>
                       );
                     })}
                   </ul>
@@ -226,20 +227,22 @@ const Resume = () => {
                 </div>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skills.items.map((skill, index) => {
-                    return <li key={index}>
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                            <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                              {skill.icon}
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>{skill.name}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </li>;
+                    return (
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
                   })}
                 </ul>
               </div>
@@ -248,29 +251,34 @@ const Resume = () => {
             {/*about */}
             <TabsContent value="about" className="w-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">
-                  {about.title}
-                </h3>
+                <h3 className="text-4xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
-                      </li>  
-                    )
-                  })}
+                <ul className="grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-4 gap-y-6 gap-x-10 max-w-[620px] mx-auto xl:mx-0">
+                  {aboutPadded.map((item, index) => (
+                    <li
+                      key={index}
+                      className={`flex items-center justify-center xl:justify-start gap-4 ${
+                        item.__placeholder ? "opacity-0 pointer-events-none select-none" : ""
+                      }`}
+                    >
+                      {!item.__placeholder && (
+                        <>
+                          <span className="text-white/60">{item.fieldName}</span>
+                          <span className="text-xl">{item.fieldValue}</span>
+                        </>
+                      )}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </TabsContent>
           </div>
         </Tabs>
       </div>
-     </motion.div>
+    </motion.div>
   );
 };
 
-export default Resume
+export default Resume;
