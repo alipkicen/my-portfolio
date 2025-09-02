@@ -23,7 +23,7 @@ Then open [http://localhost:3000](http://localhost:3000) to view it in your brow
 
 * Responsive design with **Next.js 14** and **Tailwind CSS**
 * Smooth animations using **Framer Motion**
-* Organized pages: Home, Resume, Services, Work, and Contact
+* Organized pages: Home, Resume, Work, and Contact
 * Social media and contact integrations
 * Ready for deployment on **Vercel**
 

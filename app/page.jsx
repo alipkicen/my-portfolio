@@ -10,18 +10,20 @@ const Home = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-4 xl:pb-12">
           {/*text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software and Artifical Intelligence Enthusiast</span>
+            <span className="text-xl block mb-3 md:mb-4">Frontend • Backend • Fullstack • Data Analysis • Machine Learning • Artificial Intelligence</span>
             <h1 className="h1 mb-6">
               Hello I'm <br /> <span className="text-accent">Krishan Arpidani</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80 mx-auto xl:mx-0">
-              I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies. 
+              I am an enthusiastic learner exploring the world of software development, 
+  data analysis, machine learning, and artificial intelligence. I am eager to keep learning, practicing, and applying my skills in meaningful future projects. 
             </p>
             {/*button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 size="lg"
@@ -30,6 +32,7 @@ const Home = () => {
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
               </Button>
+              </a>
               <div className="mb-8 xl:mb-0 ">
                 <Social 
                   containerStyles="flex gap-6" 

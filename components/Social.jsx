@@ -3,8 +3,8 @@ import Link from "next/link"
 import {FaGithub, FaLinkedin} from 'react-icons/fa'
 
 const socials = [
-  {icon: <FaGithub />, path: ""},
-  {icon: <FaLinkedin />, path: ""},
+  {icon: <FaGithub />, path: "https://github.com/alipkicen"},
+  {icon: <FaLinkedin />, path: "https://www.linkedin.com/in/arpidani/"},
 ];
 
 const Social = ({containerStyles, iconStyles}) => {
@@ -12,7 +12,13 @@ const Social = ({containerStyles, iconStyles}) => {
     <div className={containerStyles}>
       {socials.map((item, index) => {
         return (
-        <Link key={index} href={item.path} className={iconStyles}>
+        <Link 
+          key={index} 
+          href={item.path} 
+          className={iconStyles}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {item.icon}
         </Link>
         );
