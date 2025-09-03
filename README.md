@@ -1,7 +1,7 @@
 # Krishan Arpidani – Portfolio Website
 
 This is my personal **portfolio website**, built with [Next.js](https://nextjs.org/).  
-It showcases my work, skills, and experience as a **Software and Artificial Intelligence enthusiast**.
+It showcases my projects, skills, and journey as a **Software and Artificial Intelligence enthusiast**.
 
 ## 🚀 Getting Started
 
@@ -23,7 +23,7 @@ Then open [http://localhost:3000](http://localhost:3000) to view it in your brow
 
 * Responsive design with **Next.js 14** and **Tailwind CSS**
 * Smooth animations using **Framer Motion**
-* Organized pages: Home, Resume, Work, and Contact
+* Organized pages: Home, Resume, Project, and Contact
 * Social media and contact integrations
 * Ready for deployment on **Vercel**
 

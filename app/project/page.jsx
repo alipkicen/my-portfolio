@@ -14,41 +14,72 @@ import Image from "next/image";
 import { Item } from "@radix-ui/react-select";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 
+// map tech names to official sites
+const TECH_LINKS = {
+  "Next.js": "https://nextjs.org/",
+  "React": "https://react.dev/",
+  "Tailwind CSS": "https://tailwindcss.com/",
+  "shadcn/ui": "https://ui.shadcn.com/",
+  "Framer Motion": "https://www.framer.com/motion/",
+  "Python": "https://www.python.org/",
+  "Streamlit": "https://streamlit.io/",
+  "Pandas": "https://pandas.pydata.org/",
+  "NumPy": "https://numpy.org/",
+  "TensorFlow/Keras": "https://keras.io/",
+  "scikit-learn": "https://scikit-learn.org/",
+};
+
 //update project list kat sini
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
-    description: "Lorem Ipsum dolor sit amer consecturoa adispicng elot. cupidaitate magnam nodu.",
-    stack: [{name: "html 5"}, {name: "css 3"}, {name: "javascript"}],
-    image: '/assets/work/thumb1.png',
-    live: "",
-    github: "",
+    category: "Portfolio Website",
+    description:
+      "Personal profile built with Next.js, React, Tailwind CSS, shadcn/ui, and Framer Motion. Includes resume tabs, projects slider, social links, and CV download.",
+    stack: [
+      { name: "Next.js" },
+      { name: "React" },
+      { name: "Tailwind CSS" },
+      { name: "shadcn/ui" },
+      { name: "Framer Motion" },
+    ],
+    image: "/assets/work/thumb1.png",
+    live: "/", 
+    github: "https://github.com/alipkicen/my-portfolio", 
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
-    description: "Lorem Ipsum dolor sit amer consecturoa adispicng elot. cupidaitate magnam nodu.",
-    stack: [{name: "next.js"}, {name: "tailwind.css"}, {name: "node.js"}],
-    image: '/assets/work/thumb2.png',
-    live: "",
-    github: "",
+    category: "Reliability Timeline App",
+    description:
+      "Streamlit tool that auto-generates reliability test timelines from a start date and fixed TAT per subprocess. Exports schedules and highlights key milestones.",
+    stack: [
+      { name: "Python" },
+      { name: "Streamlit" },
+      { name: "Pandas" },
+    ],
+    image: "/assets/work/thumb2.png",
+    live: "https://mmp-gq-ops-reliability-timeline-app.streamlit.app/", 
+    github: "https://github.com/alipkicen/reliability-timeline-app", 
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
-    description: "Lorem Ipsum dolor sit amer consecturoa adispicng elot. cupidaitate magnam nodu.",
-    stack: [{name: "next.js"}, {name: "tailwind.css"}],
-    image: '/assets/work/thumb3.png',
-    live: "",
-    github: "",
+    category: "Stock Price Prediction (LSTM)",
+    description:
+      "End-to-end Python project using an LSTM model to forecast stock closing prices. Includes preprocessing, train/validation split, scaling, and evaluation with plots.",
+    stack: [
+      { name: "Python" },
+      { name: "TensorFlow/Keras" },
+      { name: "Pandas" },
+      { name: "NumPy" },
+      { name: "scikit-learn" },
+    ],
+    image: "/assets/work/thumb3.png",
+    live: "", 
+    github: "https://github.com/your-username/stock-lstm", 
   },
 ];
 
-const Work = () => {
+const Project = () => {
   const [project, setProject] = useState(projects[0])
   
   const handleSlideChange = (swiper) => {
@@ -77,19 +108,40 @@ const Work = () => {
               </div>
               {/*project category */}
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.category}
               </h2>
               {/*project description */}
               <p className="text-white/60">
                 {project.description}
               </p>
               {/*stack*/}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
+              <ul className="flex flex-wrap items-center gap-2 md:gap-3">
+                {project.stack.map((item, i) => {
+                  const href = TECH_LINKS[item.name];
+                  const pill = (
+                    <span className="
+                      px-3 py-1 rounded-full border border-accent/30 bg-accent/10 text-accent/90
+                      text-xs md:text-sm lg:text-base hover:bg-accent/20
+                    ">
                       {item.name}
-                      {index !== project.stack.length -1 && ","}
+                    </span>
+                  );
+                  return (
+                    <li key={i}>
+                      {href ? (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`Open ${item.name}`}
+                          aria-label={`Open ${item.name}`}
+                          className="focus:outline-none focus:ring-2 focus:ring-accent/60 rounded-full"
+                        >
+                          {pill}
+                        </a>
+                      ) : (
+                        pill
+                      )}
                     </li>
                   );
                 })}
@@ -99,7 +151,7 @@ const Work = () => {
               {/*button */}
               <div className="flex items-center gap-4">
                 {/*live project button */}
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -112,7 +164,7 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
                 {/*github button */}
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -166,4 +218,4 @@ const Work = () => {
   );
 };
 
-export default Work
+export default Project
