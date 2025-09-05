@@ -25,7 +25,7 @@ const TECH_LINKS = {
   "Streamlit": "https://streamlit.io/",
   "Pandas": "https://pandas.pydata.org/",
   "NumPy": "https://numpy.org/",
-  "TensorFlow/Keras": "https://keras.io/",
+  "TensorFlow": "https://www.tensorflow.org/",
   "scikit-learn": "https://scikit-learn.org/",
 };
 
@@ -68,14 +68,14 @@ const projects = [
       "End-to-end Python project using an LSTM model to forecast stock closing prices. Includes preprocessing, train/validation split, scaling, and evaluation with plots.",
     stack: [
       { name: "Python" },
-      { name: "TensorFlow/Keras" },
+      { name: "TensorFlow" },
       { name: "Pandas" },
       { name: "NumPy" },
       { name: "scikit-learn" },
     ],
-    image: "/assets/work/thumb3.png",
-    live: "", 
-    github: "https://github.com/your-username/stock-lstm", 
+    image: "/assets/work/prediction_plot.png",
+    live: "",
+    github: "https://github.com/alipkicen/stock-market-prediction-ai", 
   },
 ];
 
