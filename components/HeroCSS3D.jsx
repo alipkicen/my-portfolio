@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 const HeroCSS3D = () => {
   const containerRef = useRef(null);
@@ -62,7 +63,27 @@ const HeroCSS3D = () => {
           />
         </div>
 
-        {/* ── Layer 2: Middle plane ───────────────────── */}
+        {/* ── Layer 2: Photo (center of the 3D stack) ── */}
+        <div
+          className="absolute overflow-hidden"
+          style={{
+            inset: "22px",
+            transform: "translateZ(22px)",
+            borderRadius: "50%",
+            border: "2px solid rgba(0,255,153,0.3)",
+            boxShadow: "0 0 25px rgba(0,255,153,0.15)",
+          }}
+        >
+          <Image
+            src="/photos.png"
+            fill
+            className="object-cover"
+            alt="Krishan Arpidani"
+            priority
+          />
+        </div>
+
+        {/* ── Layer 3: Middle plane ───────────────────── */}
         <div
           className="absolute"
           style={{
