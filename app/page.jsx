@@ -3,7 +3,7 @@ import { FiDownload} from 'react-icons/fi'
 
 //components
 import Social from "@/components/Social";
-import Photo from "@/components/Photo";
+import HeroCSS3D from "@/components/HeroCSS3D";
 import Stats from "@/components/Stats";
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
             </p>
             {/*button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/resume.pdf" download target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 size="lg"
@@ -41,9 +41,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/*photo */}
+          {/* 3D hero */}
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <Photo />
+            <HeroCSS3D />
           </div>
         </div>
       </div>
