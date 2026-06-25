@@ -13,6 +13,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Item } from "@radix-ui/react-select";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import TiltCard from "@/components/TiltCard";
 
 // map tech names to official sites
 const TECH_LINKS = {
@@ -189,19 +190,21 @@ const Project = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/*overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      {/*image */}
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src={project.image} 
-                          fill 
-                          className="object-cover" 
-                          alt="" 
-                        />
+                    <TiltCard className="h-[460px] w-full">
+                      <div className="h-full relative group flex justify-center items-center bg-pink-50/20 rounded-xl overflow-hidden">
+                        {/*overlay */}
+                        <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                        {/*image */}
+                        <div className="relative w-full h-full">
+                          <Image 
+                            src={project.image} 
+                            fill 
+                            className="object-cover" 
+                            alt="" 
+                          />
+                        </div>
                       </div>
-                    </div>
+                    </TiltCard>
                   </SwiperSlide>
                 )
               })}
