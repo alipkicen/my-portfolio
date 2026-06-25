@@ -3,8 +3,17 @@ import { FiDownload} from 'react-icons/fi'
 
 //components
 import Social from "@/components/Social";
-import HeroCSS3D from "@/components/HeroCSS3D";
 import Stats from "@/components/Stats";
+import dynamic from "next/dynamic";
+
+const HeroScene = dynamic(() => import("@/components/HeroScene"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] flex items-center justify-center">
+      <div className="w-48 h-48 xl:w-72 xl:h-72 rounded-full border-4 border-accent/30" />
+    </div>
+  ),
+});
 
 const Home = () => {
   return (
@@ -43,7 +52,7 @@ const Home = () => {
           </div>
           {/* 3D hero */}
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <HeroCSS3D />
+            <HeroScene />
           </div>
         </div>
       </div>

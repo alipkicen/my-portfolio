@@ -139,6 +139,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const SkillsScene = dynamic(() => import("@/components/SkillsScene"), {
+  ssr: false,
+});
 
 const Resume = () => {
   // pad about section to always have 8 slots
@@ -282,6 +287,8 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
+
+                <SkillsScene />
 
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
                   {skills.items.map((skill, i) => (
