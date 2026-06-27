@@ -1,56 +1,60 @@
-# Krishan Arpidani – Portfolio Website
+# Krishan Arpidani — Portfolio
 
-This is my personal **portfolio website**, built with [Next.js](https://nextjs.org/).  
-It showcases my projects, skills, and journey as a **Software and Artificial Intelligence enthusiast**.
+A personal portfolio for **Krishan Arpidani**, Package Reliability Operation Engineer at Micron, building software, data, and ML/AI tools.
 
-## 🚀 Getting Started
+Single-page, scroll-driven, dark-tech minimal. Built from scratch with Next.js.
 
-Run the development server:
+**Live:** [krishan-portfolio-tau.vercel.app](https://krishan-portfolio-tau.vercel.app)
+
+## Stack
+
+- **Next.js 14** (App Router)
+- **Tailwind CSS** with a custom dark design system
+- **Framer Motion** for scroll-reveal motion
+- **Geist** (Sans + Mono) typography
+- **Phosphor Icons**
+- **Nodemailer** for the contact form
+
+## Sections
+
+A single page composed of anchored sections:
+
+- **Hero** — intro, role, primary CTAs
+- **About** — narrative + key facts + at-a-glance stats
+- **Experience** — work timeline + education
+- **Skills** — grouped toolkit with honest comfort levels
+- **Work** — selected projects with live/source links
+- **Contact** — direct channels + working contact form
+
+## Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-## ✨ Features
+### Contact form (optional)
 
-* Responsive design with **Next.js 14** and **Tailwind CSS**
-* Smooth animations using **Framer Motion**
-* Organized pages: Home, Resume, Project, and Contact
-* Social media and contact integrations
-* Ready for deployment on **Vercel**
+The contact form uses Nodemailer over Gmail. Set these environment variables (locally in `.env.local`, or in your Vercel project settings):
 
-## 📂 Project Structure
+```
+CONTACT_EMAIL=your@gmail.com
+CONTACT_EMAIL_APP_PASSWORD=your_gmail_app_password
+CONTACT_TO=where_to_receive@example.com
+```
 
-* `app/` – Main Next.js app directory
-* `components/` – Reusable UI components
-* `public/assets/` – Images, icons, and static assets
-* `styles/` – Global and utility styles
+Without these, the form UI still renders and validates, but sending will fail gracefully.
 
-## 🧑‍💻 About Me
+## Editing Content
 
-I’m **Krishan Arpidani**, passionate about building elegant digital experiences and exploring the field of **Artificial Intelligence**.
-This website serves as a showcase of my journey, skills, and projects in **software development and AI**.
+All content lives in [`lib/data.js`](lib/data.js) — profile, stats, experience, education, skills, and projects. Edit there to update the site; no component changes needed.
 
-## 📖 Learn More
+## Deployment
 
-To dive deeper into the stack used:
-
-* [Next.js Documentation](https://nextjs.org/docs)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Framer Motion](https://www.framer.com/motion/)
-
-## 🌍 Deployment
-
-The site can be deployed easily on [Vercel](https://vercel.com), the platform created by the makers of Next.js.
+Deployed on [Vercel](https://vercel.com). Push to the connected branch to deploy.
 
 ---
 
-🔗 Feel free to check out my portfolio and get in touch if you’d like to collaborate!
+Designed and built by Krishan Arpidani.
